@@ -1,9 +1,12 @@
 const cardTemplate = document.querySelector('#card-template').content;
 const places_list = document.querySelector('.places__list');
+
 const profilePopup = document.querySelector('.popup_type_edit');
 const cardPopup = document.querySelector('.popup_type_new-card');
 const imagePopup = document.querySelector('.popup_type_image');
 
+const editProfileButton = document.querySelector('.profile__edit-button');
+const closeProfileButton = profilePopup.querySelector('.popup__close');
 function createCard(name, link) {
     const card = cardTemplate.querySelector('.card').cloneNode(true);
     const card_image = card.querySelector('.card__image');
@@ -23,8 +26,12 @@ function closePopup(popup) {
 }
 
 initialCards.forEach(card => places_list.append(createCard(card.name, card.link)));
-
-
+editProfileButton.addEventListener('click', function () {
+    openPopup(profilePopup);
+});
+closeProfileButton.addEventListener('click', function () {
+    closePopup(profilePopup);
+});
 // @todo: Темплейт карточки
 
 // @todo: DOM узлы
