@@ -7,6 +7,13 @@ const imagePopup = document.querySelector('.popup_type_image');
 
 const editProfileButton = document.querySelector('.profile__edit-button');
 const closeProfileButton = profilePopup.querySelector('.popup__close');
+const submitProfileButton = profilePopup.querySelector('.popup__form');
+
+const inputNameProfile = profilePopup.querySelector('.popup__input_type_name');
+const inputDescriptionProfile = profilePopup.querySelector('.popup__input_type_description');
+const nameProfile = document.querySelector('.profile__title');
+const descriptionProfile = document.querySelector('.profile__description');
+
 function createCard(name, link) {
     const card = cardTemplate.querySelector('.card').cloneNode(true);
     const card_image = card.querySelector('.card__image');
@@ -25,13 +32,27 @@ function closePopup(popup) {
     popup.classList.remove('popup_is-opened');
 }
 
-initialCards.forEach(card => places_list.append(createCard(card.name, card.link)));
+function handleProfileFormSubmit(evt) {
+    evt.preventDefault();
+    console.log('gfdjh')
+    nameProfile.textContent = inputNameProfile.value;
+    descriptionProfile.textContent = inputDescriptionProfile.value;
+    closePopup(profilePopup);
+}
+submitProfileButton.addEventListener('submit', handleProfileFormSubmit);
+
 editProfileButton.addEventListener('click', function () {
+    inputNameProfile.value = nameProfile.textContent;
+    inputDescriptionProfile.value = descriptionProfile.textContent;
     openPopup(profilePopup);
 });
+
 closeProfileButton.addEventListener('click', function () {
     closePopup(profilePopup);
 });
+
+initialCards.forEach(card => places_list.append(createCard(card.name, card.link)));
+
 // @todo: Темплейт карточки
 
 // @todo: DOM узлы
