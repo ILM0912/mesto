@@ -7,12 +7,19 @@ const imagePopup = document.querySelector('.popup_type_image');
 
 const editProfileButton = document.querySelector('.profile__edit-button');
 const closeProfileButton = profilePopup.querySelector('.popup__close');
-const submitProfileButton = profilePopup.querySelector('.popup__form');
+const profileForm = profilePopup.querySelector('.popup__form');
+
+const addCardButton = document.querySelector('.profile__add-button');
+const closeCardButton = cardPopup.querySelector('.popup__close');
+const cardForm = cardPopup.querySelector('.popup__form');
 
 const inputNameProfile = profilePopup.querySelector('.popup__input_type_name');
 const inputDescriptionProfile = profilePopup.querySelector('.popup__input_type_description');
 const nameProfile = document.querySelector('.profile__title');
 const descriptionProfile = document.querySelector('.profile__description');
+
+const inputNameCard = cardPopup.querySelector('.popup__input_type_card-name');
+const inputLinkCard = cardPopup.querySelector('.popup__input_type_url');
 
 function createCard(name, link) {
     const card = cardTemplate.querySelector('.card').cloneNode(true);
@@ -34,12 +41,11 @@ function closePopup(popup) {
 
 function handleProfileFormSubmit(evt) {
     evt.preventDefault();
-    console.log('gfdjh')
     nameProfile.textContent = inputNameProfile.value;
     descriptionProfile.textContent = inputDescriptionProfile.value;
     closePopup(profilePopup);
 }
-submitProfileButton.addEventListener('submit', handleProfileFormSubmit);
+profileForm.addEventListener('submit', handleProfileFormSubmit);
 
 editProfileButton.addEventListener('click', function () {
     inputNameProfile.value = nameProfile.textContent;
@@ -50,6 +56,23 @@ editProfileButton.addEventListener('click', function () {
 closeProfileButton.addEventListener('click', function () {
     closePopup(profilePopup);
 });
+
+addCardButton.addEventListener('click', function () {
+    openPopup(cardPopup);
+});
+
+closeCardButton.addEventListener('click', function () {
+    cardForm.reset();
+    closePopup(cardPopup);
+});
+
+function handleCardFormSubmit(evt) {
+    evt.preventDefault();
+    places_list.prepend(createCard(inputNameCard.value, inputLinkCard.value));
+    cardForm.reset();
+    closePopup(cardPopup);
+}
+cardForm.addEventListener('submit', handleCardFormSubmit);
 
 initialCards.forEach(card => places_list.append(createCard(card.name, card.link)));
 
