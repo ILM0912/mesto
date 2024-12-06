@@ -1,4 +1,4 @@
-// import {openPopup} from './modal.js'
+import {openPopup} from './modal.js'
 
 const cardTemplate = document.querySelector('#card-template').content;
 
@@ -34,3 +34,5 @@ function createCard(name, link) {
     });
     return card;
 }
+
+export {createCard};

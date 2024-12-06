@@ -25,4 +25,4 @@ function handleEscClose(evt) {
     }
 }
 
-// export {openPopup, closePopup};
+export {openPopup, closePopup};

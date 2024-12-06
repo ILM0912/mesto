@@ -53,4 +53,4 @@ function enableValidation(validationSettings) {
     });
 };
 
-// export { enableValidation };
+export { enableValidation };

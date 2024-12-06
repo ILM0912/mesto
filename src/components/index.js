@@ -1,13 +1,15 @@
-// import { initialCards } from './cards.js';
-// import { openModal, closeModal } from './modal.js';
-// import { createCard } from './card.js';
-// import { enableValidation } from './validate.js';
+import '../pages/index.css';
+
+import { initialCards } from './cards.js';
+import { openPopup, closePopup } from './modal.js';
+import { createCard } from './card.js';
+import { enableValidation } from './validate.js';
 
 const places_list = document.querySelector('.places__list');
 
 const profilePopup = document.querySelector('.popup_type_edit');
 const cardPopup = document.querySelector('.popup_type_new-card');
-// const imagePopup = document.querySelector('.popup_type_image');
+const imagePopup = document.querySelector('.popup_type_image');
 
 const editProfileButton = document.querySelector('.profile__edit-button');
 const closeProfileButton = profilePopup.querySelector('.popup__close');
