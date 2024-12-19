@@ -4,6 +4,7 @@
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   border-radius: 50%;
+  margin: 0 29px 0 0;
   position: relative;
   overflow: hidden;
 }
@@ -17,13 +18,13 @@
 }
 
 @media screen and (max-width: 740px) {
-  .profile__image {
+  .profile__image-container {
     margin: 0 10px 0 0;
   }
 }
 
 @media screen and (max-width: 480px) {
-  .profile__image {
+  .profile__image-container {
     margin-right: 0;
   }
 }
