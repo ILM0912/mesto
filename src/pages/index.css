@@ -15,3 +15,7 @@
 @import url('../blocks/popup/__error-text/_active/popup__error-text_active.css');
 @import url('../blocks/popup/__field/popup__field.css');
 @import url('../blocks/popup/__input/_error/popup__input_error.css');
+@import url('../blocks/card/__likes/card__likes.css');
+@import url('../blocks/card/__likes/_count/card__likes_count.css');
+@import url('../blocks/card/__delete-button/_not-active/card__delete-button_not-active.css');
+@import url('../blocks/profile/__image/_pen/profile__image_pen.css');
